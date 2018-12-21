@@ -1,5 +1,7 @@
 # Imports requests library for handling HTTP requests.
 import requests
+# Library to print Python data structures in a well-formatted and more readable way!
+import pprint
 
 # Access Token generated from Instabot servers.
 APP_ACCESS_TOKEN = '6006342728.5cb0e0a.dae74d1e0dd84262b176c2dcf8ded0dc'
@@ -30,6 +32,12 @@ def owner_info():
     data = requests.get(url).json()
     print_owner_info(data)
 
+#function to get the details of media of the owner.
+def media_info():
+    url = BASE_URL + 'users/self/media/recent/?access_token=' + APP_ACCESS_TOKEN
+    data = requests.get(url).json()
+    print(data)
+
 #function to get the most popular media of the owner.
 def most_popular():
     url = BASE_URL + 'users/self/media/recent/?access_token=' + APP_ACCESS_TOKEN
@@ -54,31 +62,71 @@ def most_popular():
     if int(choice) == 1:
         max_likes = max(post_likes)
         pos = post_likes.index(max_likes)
-        print("Post id:"+post_ids[pos],"\n Post link:"+ post_links[pos])
+        return post_ids[pos],post_links[pos]
     elif int(choice) == 2:
         max_comments = max(post_comments)
         pos = post_comments.index(max_comments)
-        print( "Post id:"+post_ids[pos],"\n Post link:" +post_links[pos])
+        return post_ids[pos], post_links[pos]
 
+#function to get the least popular media of the owner.
+def least_popular():
+    url = BASE_URL + 'users/self/media/recent/?access_token=' + APP_ACCESS_TOKEN
+    data = requests.get(url).json()
+    post_ids = []
+    post_likes = []
+    post_comments = []
+    post_links = []
+    for media in (data['data']):
+        post_ids.append(media['id'])
+        post_likes.append(media['likes']['count'])
+        post_comments.append(media['comments']['count'])
+        post_links.append(media['link'])
+    print("\nWhich Recent Post you wanna select ?")
+    print("1. The one with minimum likes.")
+    print("2. The one with minimum comments.")
+    choice = input("\nEnter your choice (1 or 2) : ")
+    if choice not in ['1', '2']:
+        while choice not in ['1', '2']:
+            print("You entered the wrong choice. Please choose from given options.")
+            choice = input("Enter your choice (1 or 2) : ")
+    if int(choice) == 1:
+        min_likes = min(post_likes)
+        pos = post_likes.index(min_likes)
+        return post_ids[pos], post_links[pos]
+    elif int(choice) == 2:
+        min_comments = min(post_comments)
+        pos = post_comments.index(min_comments)
+        return post_ids[pos], post_links[pos]
 
 #interaction with instabot
 print("\nHello!!! Welcome to the Instabot.")
 choice = '1'
-while choice != '3':
+while choice != '5':
     print("\nWhat do you want to do using the bot?")
     print("1. Get the Details of the owner.")
-    print("2. Get the most popular media.")
-    print("3. Exit.\n\n")
+    print("2. Get the Details of media of owner.")
+    print("3. Get the most popular media.")
+    print("4. Get the least popular media.")
+    print("5. Exit.\n\n")
 
-    choice = input("Enter Your Choice(1-3) : ")
+    choice = input("Enter Your Choice(1-5) : ")
 
-# Perform Actions Depending on the User's Choice. Runs Until User wishes to Exit.
-    if choice in ['1', '2', '3']:
+    if choice in ['1', '2', '3', '4', '5']:
         if int(choice)==1:
            owner_info()
 
         if int(choice)==2:
-           most_popular()
+           media_info()
+
+        if int(choice)==3:
+           post_id,post_link = most_popular()
+           print("\nPost id:",post_id)
+           print("\nPost link:", post_link)
+
+        if int(choice)==4:
+           post_id, post_link = least_popular()
+           print("\nPost id:", post_id)
+           print("\nPost link:", post_link)
 
         print("\nWant to do more using Instabot?")
         ch = 'P'
@@ -92,7 +140,7 @@ while choice != '3':
                 break
     if ch == 'N':
         break;
-    elif choice == '3':
+    elif choice == '5':
         pass
     else:
         print("\nWrong choice entered.... Try Again.")
