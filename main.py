@@ -98,20 +98,42 @@ def least_popular():
         pos = post_comments.index(min_comments)
         return post_ids[pos], post_links[pos]
 
+# Function to get the comments.
+def media_comments():
+    print("\nWhich post's comments you wanna select ?")
+    print("1. The most popular one.")
+    print("2. The least popular one.")
+    choice = input("\nEnter your choice (1 or 2) : ")
+    if choice not in ['1', '2']:
+        while choice not in ['1', '2']:
+            print("You entered the wrong choice. Please choose from given options.")
+            choice = input("Enter your choice (1 or 2) : ")
+    if int(choice) == 1:
+        post_ids,post_links = most_popular()
+
+    elif int(choice)==2:
+        post_ids, post_links = least_popular()
+
+    url = BASE_URL + 'media/' + post_ids + '/comments?access_token=' + APP_ACCESS_TOKEN
+    data = requests.get(url).json()
+    for i in data["data"]:
+        print(i["text"])
+
 #interaction with instabot
 print("\nHello!!! Welcome to the Instabot.")
 choice = '1'
-while choice != '5':
+while choice != '6':
     print("\nWhat do you want to do using the bot?")
     print("1. Get the Details of the owner.")
     print("2. Get the Details of media of owner.")
     print("3. Get the most popular media.")
     print("4. Get the least popular media.")
-    print("5. Exit.\n\n")
+    print("5. Get the comments of media.")
+    print("6. Exit.\n\n")
 
-    choice = input("Enter Your Choice(1-5) : ")
+    choice = input("Enter Your Choice(1-6) : ")
 
-    if choice in ['1', '2', '3', '4', '5']:
+    if choice in ['1', '2', '3', '4', '5', '6']:
         if int(choice)==1:
            owner_info()
 
@@ -128,6 +150,9 @@ while choice != '5':
            print("\nPost id:", post_id)
            print("\nPost link:", post_link)
 
+        if int(choice)==5:
+           media_comments()
+
         print("\nWant to do more using Instabot?")
         ch = 'P'
         flag = 0
@@ -140,7 +165,7 @@ while choice != '5':
                 break
     if ch == 'N':
         break;
-    elif choice == '5':
+    elif choice == '6':
         pass
     else:
         print("\nWrong choice entered.... Try Again.")

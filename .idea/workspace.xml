@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7587071d-8860-435b-a16a-235223297bd9" name="Default Changelist" comment="" />
+    <list default="true" id="7587071d-8860-435b-a16a-235223297bd9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,31 +16,33 @@
     <session id="-1396090125">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
+          <entry key="py" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="2" />
+          <entry key="Python" value="4" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1156" />
+          <entry key="py" value="2202" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1143" />
+          <entry key="Python" value="2189" />
           <entry key="Scratch" value="13" />
         </counts>
       </usages-collector>
@@ -47,12 +53,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="120">
+              <caret line="117" column="35" selection-start-line="117" selection-start-column="35" selection-end-line="117" selection-end-column="35" />
               <folding>
-                <marker date="1545327129857" expanded="true" signature="350:1382" ph="..." />
-                <marker date="1545327129857" expanded="true" signature="1401:1402" ph="..." />
-                <marker date="1545327129857" expanded="true" signature="2601:2602" ph="..." />
+                <element signature="e#55#70#0" expanded="true" />
+                <marker date="1545409617258" expanded="true" signature="449:1685" ph="..." />
+                <marker date="1545409617258" expanded="true" signature="1496:1631" ph="..." />
+                <marker date="1545409617258" expanded="true" signature="1704:1705" ph="..." />
+                <marker date="1545409617258" expanded="true" signature="4849:4850" ph="..." />
               </folding>
             </state>
           </provider>
@@ -68,12 +76,13 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -192,14 +201,17 @@
     <entry file="file:///usr/lib/python3.5/unittest/main.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="120">
+          <caret line="117" column="35" selection-start-line="117" selection-start-column="35" selection-end-line="117" selection-end-column="35" />
           <folding>
-            <marker date="1545327129857" expanded="true" signature="350:1382" ph="..." />
-            <marker date="1545327129857" expanded="true" signature="1401:1402" ph="..." />
-            <marker date="1545327129857" expanded="true" signature="2601:2602" ph="..." />
+            <element signature="e#55#70#0" expanded="true" />
+            <marker date="1545409617258" expanded="true" signature="449:1685" ph="..." />
+            <marker date="1545409617258" expanded="true" signature="1496:1631" ph="..." />
+            <marker date="1545409617258" expanded="true" signature="1704:1705" ph="..." />
+            <marker date="1545409617258" expanded="true" signature="4849:4850" ph="..." />
           </folding>
         </state>
       </provider>
