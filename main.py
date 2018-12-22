@@ -4,7 +4,7 @@ import requests
 import pprint
 
 # Access Token generated from Instabot servers.
-APP_ACCESS_TOKEN = '6006342728.5cb0e0a.dae74d1e0dd84262b176c2dcf8ded0dc'
+APP_ACCESS_TOKEN = #"add your access token here."
 
 # Base URL for every URL used in the file.
 BASE_URL = 'https://api.instagram.com/v1/'
@@ -30,7 +30,7 @@ def print_owner_info(data):
 def owner_info():
     url = BASE_URL + 'users/self/?access_token=' + APP_ACCESS_TOKEN
     data = requests.get(url).json()
-    print_owner_info(data)
+    pprint(data)
 
 #function to get the details of media of the owner.
 def media_info():
